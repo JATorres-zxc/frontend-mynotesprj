@@ -5,7 +5,7 @@ import NoteListPage from './pages/NoteListPage';
 import NotePage from './pages/NotePage';
 
 import {
-  BrowserRouter as Router, Route, Routes
+  HashRouter as Router, Route, Routes
 } from 'react-router-dom';
 
 function App() {
