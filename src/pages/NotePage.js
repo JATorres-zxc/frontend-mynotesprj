@@ -7,23 +7,24 @@ const NotePage = () => {
     let params = useParams();
     let [note, setNotes] = useState(null);
 
-    let getNote = async () => {
-        if (params.id === 'new') return
-        try {
-            let response = await fetch(`/api/notes/${params.id}`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch note');
-            }
-            let data = await response.json();
-            setNotes(data);
-        } catch (error) {
-            console.error('Error fetching note:', error);
-        }
-    };
+
 
     useEffect(() => {
-        getNote();
-    }, [params.id,getNote]);
+        let getNote = async () => {
+            if (params.id === 'new') return
+            try {
+                let response = await fetch(`/api/notes/${params.id}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch note');
+                }
+                let data = await response.json();
+                setNotes(data);
+            } catch (error) {
+                console.error('Error fetching note:', error);
+            }
+        };
+        getNote()
+    }, [params.id]);
 
     let updateNote = async () => {
         fetch(`/api/notes/${params.id}/`,{
