@@ -7,10 +7,6 @@ const NotePage = () => {
     let params = useParams();
     let [note, setNotes] = useState(null);
 
-    useEffect(() => {
-        getNote();
-    }, [params.id]);
-
     let getNote = async () => {
         if (params.id === 'new') return
         try {
@@ -24,6 +20,10 @@ const NotePage = () => {
             console.error('Error fetching note:', error);
         }
     };
+
+    useEffect(() => {
+        getNote();
+    }, [params.id,getNote]);
 
     let updateNote = async () => {
         fetch(`/api/notes/${params.id}/`,{

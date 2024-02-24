@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import ListItem from '../components/ListItem'
-import Header from '../components/header'
 import AddButton from '../components/AddButton'
 
 export const NoteListPage = () => {

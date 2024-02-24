@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/header.js';
 import NoteListPage from './pages/NoteListPage';
 import NotePage from './pages/NotePage';
-import PrivateRoute from './utils/PrivateRoute.js'
 
 
 import {
