@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/header.js';
 import NoteListPage from './pages/NoteListPage';
 import NotePage from './pages/NotePage';
-import LoginPage from './pages/LoginPage.js'
 import PrivateRoute from './utils/PrivateRoute.js'
 
 
@@ -20,7 +19,6 @@ function App() {
           <Routes>
             <Route path='/' exact element={<NoteListPage />} />
             <Route path='/note/:id' element={<NotePage />} />
-            <Route path='/login' element={<LoginPage />} />
           </Routes>
         </div>
       </div>
