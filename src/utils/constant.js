@@ -1,0 +1,1 @@
+export const URL = 'https://mynotesprj-production.up.railway.app/'
