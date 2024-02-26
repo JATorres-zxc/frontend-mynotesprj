@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import { ReactComponent as Arrowleft} from '../assets/arrow-left.svg'
-import {URL} from '../utils/constant'
+
 
 const NotePage = () => {
     const navigate = useNavigate(); 
@@ -14,7 +14,7 @@ const NotePage = () => {
         let getNote = async () => {
             if (params.id === 'new') return
             try {
-                let response = await fetch(URL+`/api/notes/${params.id}`);
+                let response = await fetch(`/api/notes/${params.id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch note');
                 }
@@ -28,7 +28,7 @@ const NotePage = () => {
     }, [params.id]);
 
     let updateNote = async () => {
-        fetch(URL+`/api/notes/${params.id}/`,{
+        fetch(`/api/notes/${params.id}/`,{
             method: 'PUT',
             headers:{
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const NotePage = () => {
 
 
     let deleteNote = async () => {
-        fetch(URL+`/api/notes/${params.id}/`, {
+        fetch(`/api/notes/${params.id}/`, {
             method: 'DELETE',
             headers:{
                 'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ const NotePage = () => {
     }
 
     let createNote = async () => {
-        fetch(URL+'/api/notes/',{
+        fetch('/api/notes/',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
