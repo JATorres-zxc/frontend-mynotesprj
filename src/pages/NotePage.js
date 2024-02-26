@@ -48,7 +48,7 @@ const NotePage = () => {
     }
 
     let createNote = async () => {
-        fetch(URL+`/api/notes/`,{
+        fetch(URL+'/api/notes/',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
