@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import { ReactComponent as Arrowleft} from '../assets/arrow-left.svg'
+import {URL} from '../utils/constant'
 
 const NotePage = () => {
     const navigate = useNavigate(); 
