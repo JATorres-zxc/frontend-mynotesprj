@@ -1,1 +1,1 @@
-export const URL = 'http://mynotesprj-production.up.railway.app'
+export const URL = 'https://mynotesprj-production.up.railway.app'
