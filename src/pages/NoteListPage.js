@@ -4,18 +4,20 @@ import AddButton from '../components/AddButton'
 
 
 export const NoteListPage = () => {
-    let [notes, setNotes] = useState([])
+    let [notes, setNotes] = useState([]) // state to store notes
 
     useEffect(() => {
-        getNotes()
+        getNotes() //fetch notes from api(hook to perform side effectss of component)
     }, [])
 
+    // function to fetch notes from api
     let getNotes = async () => {
         let response = await fetch('/api/notes')
         let data = await response.json()
         // console.log('data:', data)
         setNotes(data)
     }
+    // this is what you see in the home page
     return (
         <div className='notes'>
             <div className='notes-header'>
